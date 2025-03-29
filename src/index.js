@@ -18,7 +18,7 @@ const app = express();
 
 (async () => {
   try {
-    await mongoose.connect(`${process.env.MONGORI}/${DB_NAME}`);
+    await mongoose.connect(`${process.env.MONGO_URI}/${DB_NAME}`);
     app.on("error", (error) => {
       console.log("Error Caused by express listener:", error);
     });
