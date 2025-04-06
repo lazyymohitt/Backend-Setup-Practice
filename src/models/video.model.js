@@ -1,7 +1,5 @@
 import mongoose , {Schema} from "mongoose";
 
-
-
 const videoSchema  = new Schema({
     videoFile:{
         type:string , // get from Cloudinary
