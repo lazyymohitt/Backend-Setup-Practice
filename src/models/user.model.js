@@ -35,6 +35,14 @@ const userSchema = new mongoose.Schema(
         type:Schema.Types.ObjectId,
         ref:"Video"
     }
+    ,password:{
+      type:String,
+      required:[true,"password Must Be Entered"]
+    },
+    refreshToken:{
+      type:String
+    }
+    
   },
   {
     timestamps: true,
