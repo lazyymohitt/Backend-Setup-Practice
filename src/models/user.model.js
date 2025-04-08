@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       required: true,
       trim: true,
-      index: true, // just wanted to create as optimiseable searchable
+      index: true, //just wanted to create as optimiseable searchable
     },
     email: {
       type: String,
