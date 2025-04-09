@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       index: true,
     },
+    //Minor changes done
     avatar: {
       type: String, //Url will get from Cloudinary.
       required: true,
