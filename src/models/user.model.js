@@ -48,7 +48,8 @@ const userSchema = new mongoose.Schema(
   {
     timestamps: true,
   }
-);
+)
+;
 
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) return next();
@@ -56,12 +57,15 @@ userSchema.pre("save", async function (next) {
   next;
 });
 
+
 // just comparing the user passsword with the encrrypted password by the bcrypt
+
 
 userSchema.methods.ispasswordCorrect  = async function(password)
 {
  return await bcrypt.compare(password,this.password)
 }
+
 
 //creating the function to generate the accestoken h{ere
 userSchema.methods.generateAccessToken = function (){
@@ -78,6 +82,7 @@ userSchema.methods.generateAccessToken = function (){
     }
   )
 }
+
 //creating the function to generate the refreshtoken here
 userSchema.methods.generateRefreshToken = function (){
   return jwt.sign(
@@ -90,5 +95,6 @@ userSchema.methods.generateRefreshToken = function (){
     }
   )
 }
+
 
 export const User = mongoose.model("User", userSchema);
